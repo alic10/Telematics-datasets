@@ -3,6 +3,7 @@
 ### Create simulated telematics dataset 1
 set.seed(123)
 n <- 10000  # number of rows
+
 dataset1 <- tibble(
   Timestamp = seq(from = as.POSIXct("2023-01-01 00:00"), by = "min", length.out = n),
   Speed = round(runif(n, 20, 90), 0),
