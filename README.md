@@ -2,6 +2,7 @@
 
 ### Create simulated telematics dataset 1
 set.seed(123)
+
 n <- 10000  # number of rows
 
 dataset1 <- tibble(
@@ -11,6 +12,7 @@ dataset1 <- tibble(
 )
 
 ### Generate acceleration values based on BrakingPattern
+
 dataset1$Acceleration <- ifelse(
   dataset1$BrakingPattern == "Sudden",
   round(runif(n, 10, 35), 1),  # higher range for sudden brakes
@@ -18,7 +20,9 @@ dataset1$Acceleration <- ifelse(
 )
 
 ### Create simulated telematics dataset 2
+
 set.seed(123)
+
 dataset2 <- tibble(
   Timestamp = seq(from = as.POSIXct("2023-01-01 00:00"), by = "min", length.out = n),
   Location = sample(c("Urban", "Suburban", "Rural"), n, replace = TRUE),
